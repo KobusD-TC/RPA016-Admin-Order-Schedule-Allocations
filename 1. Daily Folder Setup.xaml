@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_1__Folder_Setup" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="897,1022" sap2010:WorkflowViewState.IdRef="_1__Folder_Setup_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_1__Folder_Setup" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1289,1151" sap2010:WorkflowViewState.IdRef="_1__Folder_Setup_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
       <x:String>System.Activities</x:String>
@@ -62,7 +62,7 @@
       <AssemblyReference>UiPath.Platform</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_1__Folder_Setup" sap:VirtualizedContainerService.HintSize="473,957" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_1__Folder_Setup" sap:VirtualizedContainerService.HintSize="473,1086" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="dte_ddMMMM" />
       <Variable x:TypeArguments="x:String" Name="Root_PRJ_Location" />
@@ -103,7 +103,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence sap2010:Annotation.AnnotationText="Create the daily folder structure where operations will take place from &#xA;" DisplayName="1. Create folders " sap:VirtualizedContainerService.HintSize="431,655" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="Create the daily folder structure where operations will take place from &#xA;" DisplayName="1. Create folders " sap:VirtualizedContainerService.HintSize="431,784" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -111,9 +111,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder -- Dated" sap:VirtualizedContainerService.HintSize="338,89" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Root_PRJ_Location + dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM]" />
-      <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder -- Drop Zone" sap:VirtualizedContainerService.HintSize="338,89" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[Root_PRJ_Location + dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM + &quot;\1 - Drop Zone&quot;]" />
-      <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder -- Verification" sap:VirtualizedContainerService.HintSize="338,89" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[Root_PRJ_Location + dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM + &quot;\2 - Verification&quot;]" />
-      <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder -- Processed" sap:VirtualizedContainerService.HintSize="338,89" sap2010:WorkflowViewState.IdRef="CreateDirectory_4" Path="[Root_PRJ_Location + dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM + &quot;\3 - Processed&quot;]" />
+      <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder -- 1) Drop Zone" sap:VirtualizedContainerService.HintSize="338,89" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[Root_PRJ_Location + dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM + &quot;\1 - Drop Zone&quot;]" />
+      <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder -- 1.2) Processing" sap:VirtualizedContainerService.HintSize="338,89" sap2010:WorkflowViewState.IdRef="CreateDirectory_5" Path="[Root_PRJ_Location + dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM + &quot;\1 - Drop Zone\Processing&quot;]" />
+      <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder -- 2) Verification" sap:VirtualizedContainerService.HintSize="338,89" sap2010:WorkflowViewState.IdRef="CreateDirectory_3" Path="[Root_PRJ_Location + dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM + &quot;\2 - Verification&quot;]" />
+      <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder -- 3) Processed" sap:VirtualizedContainerService.HintSize="338,89" sap2010:WorkflowViewState.IdRef="CreateDirectory_4" Path="[Root_PRJ_Location + dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM + &quot;\3 - Processed&quot;]" />
     </Sequence>
   </Sequence>
 </Activity>
