@@ -103,7 +103,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence sap2010:Annotation.AnnotationText="Create the daily folder structure where operations will take place from &#xD;&#xA;" DisplayName="1. Create folders " sap:VirtualizedContainerService.HintSize="431,655" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="Create the daily folder structure where operations will take place from &#xA;" DisplayName="1. Create folders " sap:VirtualizedContainerService.HintSize="431,655" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
