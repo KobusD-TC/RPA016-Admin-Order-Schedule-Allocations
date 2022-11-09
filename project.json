@@ -3,6 +3,7 @@
   "description": "Allocating funds in the finadmin application ",
   "main": "Main.xaml",
   "dependencies": {
+    "System.Data.SqlClient": "[4.8.4]",
     "UiPath.Database.Activities": "[1.7.1]",
     "UiPath.Excel.Activities": "[2.16.0]",
     "UiPath.Mail.Activities": "[1.18.0]",
@@ -29,8 +30,7 @@
     "executionType": "Workflow",
     "readyForPiP": false,
     "startsInPiP": false,
-    "mustRestoreAllDependencies": true,
-    "pipType": "ChildSession"
+    "mustRestoreAllDependencies": true
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -54,8 +54,8 @@
       "output": []
     },
     {
-      "filePath": "1. Daily Folder Setup.xaml",
-      "uniqueId": "6293bb5d-5eb0-4096-9a8e-afef2849672e",
+      "filePath": "A. Daily Folder Setup.xaml",
+      "uniqueId": "05a3c3a9-0027-46f3-83fd-18167e102fc9",
       "input": [],
       "output": []
     }
