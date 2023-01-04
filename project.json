@@ -15,7 +15,7 @@
   "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "22.10.1.0",
-  "projectVersion": "1.0.1-alpha",
+  "projectVersion": "1.0.1-alpha.6",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -56,6 +56,24 @@
     {
       "filePath": "A. Daily Folder Setup.xaml",
       "uniqueId": "05a3c3a9-0027-46f3-83fd-18167e102fc9",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "B. Schedule Verfications.xaml",
+      "uniqueId": "cedf2f81-b076-486e-be5f-c8e9d4940e28",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "AA. Queue Populator.xaml",
+      "uniqueId": "af7be314-6f43-40d4-abd2-11c496e3c9cf",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "X. Playground.xaml",
+      "uniqueId": "7ddf487d-d28b-4091-8ec2-f79cf9f618ec",
       "input": [],
       "output": []
     }
