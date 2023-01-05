@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="AA__Queue_Populator" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1043,2365" sap2010:WorkflowViewState.IdRef="AA__Queue_Populator_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="AA__Queue_Populator" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1043,2634" sap2010:WorkflowViewState.IdRef="AA__Queue_Populator_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
       <x:String>System.Activities</x:String>
@@ -77,7 +77,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AA) Queue_Populator" sap:VirtualizedContainerService.HintSize="596,2260" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AA) Queue_Populator" sap:VirtualizedContainerService.HintSize="596,2529" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="dte_ddMMMM" />
       <Variable x:TypeArguments="x:String" Name="dte_MMMMyyyy" />
@@ -119,7 +119,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <Sequence sap2010:Annotation.AnnotationText="- Looks in the Drop Zone for any new items to add to Queue&#xA;" DisplayName="1. Verification Queue populator" sap:VirtualizedContainerService.HintSize="554,1148" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence sap2010:Annotation.AnnotationText="- Looks in the Drop Zone for any new items to add to Queue&#xA;" DisplayName="1. Verification Queue populator" sap:VirtualizedContainerService.HintSize="554,1333" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="DropZone_Folder" />
       </Sequence.Variables>
@@ -127,6 +127,7 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="507,100" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
@@ -143,7 +144,7 @@
           </scg:List>
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
-      <ui:ForEachFileX sap2010:Annotation.AnnotationText="- Move all files to the Queue folder to be processed&#xA;" DisplayName="For Each File in Folder" Filter="*.xls*" Folder="[DropZone_Folder]" sap:VirtualizedContainerService.HintSize="507,874" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+      <ui:ForEachFileX sap2010:Annotation.AnnotationText="- Move all files to the Queue folder to be processed&#xA;" DisplayName="For Each File in Folder" Filter="*.xls*" Folder="[DropZone_Folder]" sap:VirtualizedContainerService.HintSize="507,907" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
         <ui:ForEachFileX.Body>
           <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
             <ActivityAction.Argument1>
@@ -152,7 +153,7 @@
             <ActivityAction.Argument2>
               <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
             </ActivityAction.Argument2>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="473,583" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="473,616" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="Queue_Ref_Name" />
                 <Variable x:TypeArguments="x:String" Default="RPA016 - Verification Queue" Name="QueueNameVerification" />
@@ -177,12 +178,8 @@
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="431,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Moving file into Queue: &quot;+Queue_Ref_Name]" />
-              <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="431,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="High" QueueType="[QueueNameVerification]" Reference="[Queue_Ref_Name]">
-                <ui:AddQueueItem.ItemInformation>
-                  <InArgument x:TypeArguments="x:String" x:Key="File Name">["Item_"+Queue_Ref_Name]</InArgument>
-                </ui:AddQueueItem.ItemInformation>
-              </ui:AddQueueItem>
               <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[Root_PRJ_Location + dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM + &quot;\1 - Drop Zone\Queued&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="431,158" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[CurrentFile.ToString]" />
+              <ui:Comment sap:VirtualizedContainerService.HintSize="431,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="&quot;Call the Verification Sequences&quot;" />
             </Sequence>
           </ActivityAction>
         </ui:ForEachFileX.Body>
@@ -194,16 +191,21 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachFileX>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="B. Schedule Verfications.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="507,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="B. Schedule Verfications.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
     </Sequence>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="554,778" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="554,862" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="518,700" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="518,784" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap2010:Annotation.AnnotationText="- Looks in the verifications folder for any verified document to add to allocation Queue" DisplayName="2.Allocation Queue populator" sap:VirtualizedContainerService.HintSize="476,608" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence sap2010:Annotation.AnnotationText="- Looks in the verifications folder for any verified document to add to allocation Queue" DisplayName="2.Allocation Queue populator" sap:VirtualizedContainerService.HintSize="476,692" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -225,7 +227,7 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.xls*" Folder="[DropZone_Folder]" sap:VirtualizedContainerService.HintSize="434,334" sap2010:WorkflowViewState.IdRef="ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+            <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.xls*" Folder="[DropZone_Folder]" sap:VirtualizedContainerService.HintSize="434,266" sap2010:WorkflowViewState.IdRef="ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
               <ui:ForEachFileX.Body>
                 <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
                   <ActivityAction.Argument1>
@@ -234,16 +236,14 @@
                   <ActivityAction.Argument2>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                   </ActivityAction.Argument2>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </Sequence>
                 </ActivityAction>
               </ui:ForEachFileX.Body>
             </ui:ForEachFileX>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="C. Pre Allocations.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="C. Pre Allocations.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <scg:Dictionary x:TypeArguments="x:String, Argument" />
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
           </Sequence>
         </Sequence>
       </ui:CommentOut.Body>
