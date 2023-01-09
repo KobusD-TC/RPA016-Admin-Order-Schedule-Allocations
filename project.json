@@ -54,26 +54,20 @@
       "output": []
     },
     {
-      "filePath": "A. Daily Folder Setup.xaml",
-      "uniqueId": "05a3c3a9-0027-46f3-83fd-18167e102fc9",
+      "filePath": "(2-Main) Queue Processor.xaml",
+      "uniqueId": "74f16ad6-6c93-42fd-bc71-9abbfec692b2",
       "input": [],
       "output": []
     },
     {
-      "filePath": "B. Schedule Verfications.xaml",
-      "uniqueId": "cedf2f81-b076-486e-be5f-c8e9d4940e28",
+      "filePath": "(1-Main) Daily FolderSetup.xaml",
+      "uniqueId": "66588876-bbb6-49ed-bd59-17312ba76726",
       "input": [],
       "output": []
     },
     {
-      "filePath": "AA. Queue Populator.xaml",
-      "uniqueId": "af7be314-6f43-40d4-abd2-11c496e3c9cf",
-      "input": [],
-      "output": []
-    },
-    {
-      "filePath": "X. Playground.xaml",
-      "uniqueId": "7ddf487d-d28b-4091-8ec2-f79cf9f618ec",
+      "filePath": "(3-Main) Datapack Populator.xaml",
+      "uniqueId": "79c9af71-b7de-4062-aa22-54c7d8560435",
       "input": [],
       "output": []
     }
