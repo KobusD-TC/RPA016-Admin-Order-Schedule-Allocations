@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="C__Schedule_Allocations" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1043,1342" sap2010:WorkflowViewState.IdRef="C__Schedule_Allocations_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="C__Schedule_Allocations" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1120,2740" sap2010:WorkflowViewState.IdRef="C__Schedule_Allocations_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="58">
       <x:String>System.Activities</x:String>
@@ -87,7 +87,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="- In this workflow the schedules that was placed in the verified folder will be added to the daily tracker&#xD;&#xA;- If the administrator name is missing the schedules will be moved out&#xD;&#xA;- Users will be notified and the schedule must be fixed and dropped back in the folder" DisplayName="(2B-Ops) Schedule Appender" sap:VirtualizedContainerService.HintSize="473,1277" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="- In this workflow the schedules that was placed in the verified folder will be added to the daily tracker&#xA;- If the administrator name is missing the schedules will be moved out&#xA;- Users will be notified and the schedule must be fixed and dropped back in the folder" DisplayName="(2B-Ops) Schedule Appender" sap:VirtualizedContainerService.HintSize="633,2675" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="dte_MMMMyyyy" />
       <Variable x:TypeArguments="x:String" Name="dte_ddMMMM" />
@@ -101,7 +101,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,193" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="591,193" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -139,8 +139,8 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="431,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[Root_PRJ_Location + dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM + &quot;\Admin Orders Allocation - Schedule List_&quot;+DateTime.Now.ToString(&quot;ddMMyyyy&quot;)+&quot;.xlsx&quot;]" />
-    <Sequence DisplayName="-- Schedule-List Tracker population --" sap:VirtualizedContainerService.HintSize="431,764" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="591,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[Root_PRJ_Location + dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM + &quot;\Admin Orders Allocation - Schedule List_&quot;+DateTime.Now.ToString(&quot;ddMMyyyy&quot;)+&quot;.xlsx&quot;]" />
+    <Sequence DisplayName="-- Schedule-List Tracker population --" sap:VirtualizedContainerService.HintSize="591,2192" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="AdministratorName" />
         <Variable x:TypeArguments="x:String" Name="ScheduleName" />
@@ -152,8 +152,8 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[Root_PRJ_Location+ dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM + &quot;\2 - Verification\Verified&quot;]" />
-      <Sequence sap2010:Annotation.AnnotationText="- Finding Last row in excel tracker sheet&#xD;&#xA;- This is to ensure that data is appended in the correct line &#xA;" DisplayName="A. Find last Row in schedule" sap:VirtualizedContainerService.HintSize="230,153" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="549,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[Root_PRJ_Location+ dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM + &quot;\2 - Verification\Verified&quot;]" />
+      <Sequence sap2010:Annotation.AnnotationText="- Finding Last row in excel tracker sheet&#xA;- This is to ensure that data is appended in the correct line &#xA;" DisplayName="A. Find last Row in schedule tracker list" sap:VirtualizedContainerService.HintSize="549,153" sap2010:WorkflowViewState.IdRef="Sequence_8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -221,15 +221,15 @@
           </ueab:ExcelProcessScopeX.Body>
         </ueab:ExcelProcessScopeX>
       </Sequence>
-      <Sequence sap2010:Annotation.AnnotationText="- For each schedule that must be appended to the tracker, firstly read the data points, do neccessary calculations and append the data to daily schedule tracker" DisplayName="B. Read and Append Data" sap:VirtualizedContainerService.HintSize="230,168" sap2010:WorkflowViewState.IdRef="Sequence_19">
+      <Sequence sap2010:Annotation.AnnotationText="- For each schedule that must be appended to the tracker, firstly read the data points, do neccessary calculations and append the data to daily schedule tracker" DisplayName="B. Read and Append Data" sap:VirtualizedContainerService.HintSize="549,1596" sap2010:WorkflowViewState.IdRef="Sequence_19">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[Root_PRJ_Location+ dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM + &quot;\2 - Verification\Verified&quot;]" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="CreationDateOldFirst" SkipFolderWithoutPermission="True">
+        <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="[Root_PRJ_Location+ dte_MMMMyyyy + &quot;\&quot; + dte_ddMMMM + &quot;\2 - Verification\Verified&quot;]" sap:VirtualizedContainerService.HintSize="507,1462" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="CreationDateOldFirst" SkipFolderWithoutPermission="True">
           <ui:ForEachFileX.Body>
             <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
               <ActivityAction.Argument1>
@@ -267,7 +267,7 @@
                     </scg:List>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
-                <Sequence sap2010:Annotation.AnnotationText="Get Administrator Name&#xA;" DisplayName="A. Data Retrieval" sap:VirtualizedContainerService.HintSize="431,108" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                <Sequence sap2010:Annotation.AnnotationText="- Get Administrator Name&#xA;" DisplayName="A. Data Retrieval" sap:VirtualizedContainerService.HintSize="431,108" sap2010:WorkflowViewState.IdRef="Sequence_17">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -346,9 +346,7 @@
                         <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="RPA016 - No Administrator allocated" To="kobusd@nutun.com">
                           <ui:SendOutlookMail.Files>
                             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                              <InArgument x:TypeArguments="x:String">
-                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentFile.ToString" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String">[CurrentFile.ToString]</InArgument>
                             </scg:List>
                           </ui:SendOutlookMail.Files>
                         </ui:SendOutlookMail>
@@ -447,13 +445,13 @@
           </ui:ForEachFileX.Body>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachFileX>
       </Sequence>
-      <Sequence sap2010:Annotation.AnnotationText="-Getting the payment ID that corresponds to the specific schedule&#xD;&#xA;- Adds that data to the corresponding column " DisplayName="C. Payment ID retrieval" sap:VirtualizedContainerService.HintSize="230,170" sap2010:WorkflowViewState.IdRef="Sequence_20">
+      <Sequence sap2010:Annotation.AnnotationText="-Getting the payment ID that corresponds to the specific schedule&#xA;- Adds that data to the corresponding column " DisplayName="C. Payment ID retrieval" sap:VirtualizedContainerService.HintSize="549,170" sap2010:WorkflowViewState.IdRef="Sequence_20">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
