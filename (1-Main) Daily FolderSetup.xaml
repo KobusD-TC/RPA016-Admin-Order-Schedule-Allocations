@@ -170,7 +170,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Operations Worksheet&quot;).Cell(&quot;F3&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,158" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[DateTime.Now.ToString(&quot;dd-mm-yyyy&quot;)]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;Operations Worksheet&quot;).Cell(&quot;F3&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,158" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[DateTime.Now.ToString(&quot;dd MMM yyyy&quot;)]" />
                   </Sequence>
                 </ActivityAction>
               </ueab:ExcelApplicationCard.Body>
